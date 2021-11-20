@@ -1,0 +1,166 @@
+1. Check for Validation
+{
+  "machine": {
+    "outlets": {
+      "count_n": 2
+    },
+    "beverages": {
+      "hot_tea": {
+        "hot_water": "200",
+        "hot_milk": 100,
+        "ginger_syrup": 10,
+        "sugar_syrup": 10,
+        "tea_leaves_syrup": 30
+      },
+      "hot_coffee": {
+        "hot_water": 100,
+        "ginger_syrup": 30,
+        "hot_milk": 400,
+        "sugar_syrup": 50,
+        "tea_leaves_syrup": 30
+      },
+      "black_tea": {
+        "hot_water": 300,
+        "ginger_syrup": 30,
+        "sugar_syrup": 50,
+        "tea_leaves_syrup": 30
+      },
+      "green_tea": {
+        "hot_water": 100,
+        "ginger_syrup": 30,
+        "sugar_syrup": 50,
+        "green_mixture": 30
+      },
+    }
+  }
+}
+
+Output: 
+Total Quantity is missing !
+outlet and beverages mismatch !
+Invalid datatype (required int) in beverages for hot_water
+*** Exiting the application ***
+
+Explanation:
+Quantity block is missing in json and outlet count and beverages count mismatch and data type for quatity is string (int is required)
+
+
+2.
+{
+  "machine": {
+    "outlets": {
+      "count_n": 4
+    },
+    "total_items_quantity": {
+      "hot_water": 500,
+      "hot_milk": 500,
+      "ginger_syrup": 100,
+      "sugar_syrup": 100,
+      "tea_leaves_syrup": 100
+    },
+    "beverages": {
+      "hot_tea": {
+        "hot_water": 200,
+        "hot_milk": 100,
+        "ginger_syrup": 10,
+        "sugar_syrup": 10,
+        "tea_leaves_syrup": 30
+      },
+      "hot_coffee": {
+        "hot_water": 100,
+        "ginger_syrup": 30,
+        "hot_milk": 400,
+        "sugar_syrup": 50,
+        "tea_leaves_syrup": 30
+      },
+      "black_tea": {
+        "hot_water": 300,
+        "ginger_syrup": 30,
+        "sugar_syrup": 50,
+        "tea_leaves_syrup": 30
+      },
+      "green_tea": {
+        "hot_water": 100,
+        "ginger_syrup": 30,
+        "sugar_syrup": 50,
+        "green_mixture": 30
+      },
+    }
+  }
+}
+
+Output:
+hot_tea is prepared
+***Please refill hot_water,hot_milk,sugar_syrup***
+hot_coffee is prepared
+black_tea cannot be prepared because hot_water,sugar_syrup is not available
+green_tea cannot be prepared because sugar_syrup,green_mixture is not available
+
+
+
+Explanation:
+first hot tea is prepared, hot coffee is prepared but after coffee max limit of all beverages crossed for (hot_water,hot_milk,sugar_syrup)
+so we alert for refill, then black tea is not prepared because hot water and sugar syrup is not avaiable
+
+
+
+3. 
+{
+  "machine": {
+    "outlets": {
+      "count_n": 4
+    },
+    "total_items_quantity": {
+      "hot_water": 1000,
+      "hot_milk": 2000,
+      "ginger_syrup": 500,
+      "sugar_syrup": 500,
+      "tea_leaves_syrup": 500
+    },
+    "beverages": {
+      "hot_tea": {
+        "hot_water": 200,
+        "hot_milk": 100,
+        "ginger_syrup": 10,
+        "sugar_syrup": 10,
+        "tea_leaves_syrup": 30
+      },
+      "hot_coffee": {
+        "hot_water": 100,
+        "ginger_syrup": 30,
+        "hot_milk": 400,
+        "sugar_syrup": 50,
+        "tea_leaves_syrup": 30
+      },
+      "black_tea": {
+        "hot_water": 300,
+        "ginger_syrup": 30,
+        "sugar_syrup": 50,
+        "tea_leaves_syrup": 30
+      },
+      "green_tea": {
+        "hot_water": 100,
+        "ginger_syrup": 30,
+        "sugar_syrup": 50,
+        "green_mixture": 30
+      },
+    }
+  }
+}
+
+Output:
+hot_tea is prepared
+hot_coffee is prepared
+black_tea is prepared
+green_tea cannot be prepared because green_mixture is not available
+
+
+Explanation:
+first hot tea is prepared, hot coffee is prepared, black_tea is prepared and green_tea is not prepared beacause green_mixture element is not present
+
+
+
+
+
+
+

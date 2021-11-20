@@ -1,0 +1,6 @@
+run command:
+1. pip install -r requirement.txt
+
+2. python cmachine.py
+
+3. you can change input test case manuall by defining tha json or at api end point ("https://api.npoint.io/77e0bf528e4af43cdc10")
